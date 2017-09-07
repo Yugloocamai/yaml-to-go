@@ -7,7 +7,7 @@
 	A simple utility to translate JSON into a Go type definition.
 */
 
-function jsonToGo(json, typename)
+function yamlToGo(s, typename)
 {
 	var data;
 	var scope;
@@ -16,7 +16,7 @@ function jsonToGo(json, typename)
 
 	try
 	{
-		data = JSON.parse(json.replace(/\.0/g, ".1")); // hack that forces floats to stay as floats
+		data = YAML.parse(s.replace(/\.0/g, ".1")); // hack that forces floats to stay as floats
 		scope = data;
 	}
 	catch (e)
@@ -119,7 +119,7 @@ function jsonToGo(json, typename)
 			append(format(keyname)+" ");
 			parseScope(scope[keyname]);
 
-			append(' `json:"'+keyname);
+			append(' `yaml:"'+keyname);
 			if (omitempty && omitempty[keyname] === true)
 			{
 				append(',omitempty');
@@ -235,10 +235,10 @@ function jsonToGo(json, typename)
 if (typeof module != 'undefined') {
     if (!module.parent) {
         process.stdin.on('data', function(buf) {
-            var json = buf.toString('utf8')
-            console.log(jsonToGo(json).go)
+            var s = buf.toString('utf8')
+            console.log(yamlToGo(s).go)
         })
     } else {
-        module.exports = jsonToGo
+        module.exports = yamlToGo
     }
 }
