@@ -85,14 +85,14 @@ $(function()
 		}
 	});
 
-	// Fill in sample JSON if the user wants to see an example
+	// Fill in sample data if the user wants to see an example
 	$('#sample1').click(function()
 	{
-		$('#input').text(stringify(sampleJson1)).keyup();
+		$('#input').text(stringify(sample1)).keyup();
 	});
 	$('#sample2').click(function()
 	{
-		$('#input').text(stringify(sampleJson2)).keyup();
+		$('#input').text(stringify(sample2)).keyup();
 	});
 
 	var dark = false;
@@ -111,15 +111,15 @@ $(function()
 	});
 });
 
-// Stringifies JSON in the preferred manner
-function stringify(json)
+// Stringifies YAML in the preferred manner
+function stringify(s)
 {
-	return JSON.stringify(json, null, "\t");
+	return YAML.stringify(s, 4);
 }
 
 
 // From the SmartyStreets API
-var sampleJson1 = [
+var sample1 = [
 	{
 		"input_index": 0,
 		"candidate_index": 0,
@@ -210,7 +210,7 @@ var sampleJson1 = [
 
 
 // From the GitHub API
-var sampleJson2 = {
+var sample2 = {
 	"id": 1296269,
 	"owner": {
 		"login": "octocat",
