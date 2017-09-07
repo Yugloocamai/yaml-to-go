@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>JSON-to-Go: Convert JSON to Go instantly</title>
+		<title>YAML-to-Go: Convert YAML to Go instantly</title>
 		<meta charset="UTF-8">
 		<script>
 			if ('serviceWorker' in navigator) {
@@ -14,7 +14,8 @@
 		</script>
 		<script src="resources/js/jquery.min.js"></script>
 		<script src="resources/js/highlight.min.js"></script>
-		<script src="resources/js/json-to-go.js"></script>
+		<script src="resources/js/js-yaml.min.js"></script>
+		<script src="resources/js/yaml-to-go.js"></script>
 		<script src="resources/js/common.js"></script>
 		<script src="resources/js/gofmt.js" async></script>
 		<link rel="stylesheet" href="resources/css/tomorrow.highlight.css">
@@ -23,13 +24,13 @@
 	<body>
 		<header>
 			<div class="intro">
-				<h1>JSON-to-Go</h1>
-				<h2>Convert JSON to Go struct</h2>
+				<h1>YAML-to-Go</h1>
+				<h2>Convert YAML to Go struct</h2>
 				<p>
-					This tool instantly converts JSON into a Go type definition. Paste a JSON structure on the left and the equivalent Go type will be generated to the right, which you can paste into your program. The script has to make some assumptions, so double-check the output!
+					This tool instantly converts YAML into a Go type definition. Paste a YAML structure on the left and the equivalent Go type will be generated to the right, which you can paste into your program. The script has to make some assumptions, so double-check the output!
 				</p>
 				<p>
-					For an example, try converting JSON from the <a href="javascript:" id="sample1">SmartyStreets API</a> or the <a href="javascript:" id="sample2"> GitHub API</a>.
+					For an example, try converting YAML from the <a href="javascript:" id="sample1">SmartyStreets API</a> or the <a href="javascript:" id="sample2"> GitHub API</a>.
 				</p>
 			</div>
 			<img src="resources/images/json-to-go.png" id="brand">
@@ -37,7 +38,7 @@
 		</header>
 		<table>
 			<tr>
-				<th style="width: 45%;">JSON</th>
+				<th style="width: 45%;">YAML</th>
 				<th style="width: 10%; font-size: 22px;">&#8594;</th>
 				<th style="width: 45%;">Go</th>
 			</tr>
