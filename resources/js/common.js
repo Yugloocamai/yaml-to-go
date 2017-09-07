@@ -13,7 +13,7 @@ function initAnalytics()
 
 $(function()
 {
-	var emptyInputMsg = "Paste JSON here";
+	var emptyInputMsg = "Paste YAML here";
 	var emptyOutputMsg = "Go will appear here";
 	var formattedEmptyInputMsg = '<span style="color: #777;">'+emptyInputMsg+'</span>';
 	var formattedEmptyOutputMsg = '<span style="color: #777;">'+emptyOutputMsg+'</span>';
@@ -52,7 +52,7 @@ $(function()
 			return;
 		}
 
-		var output = jsonToGo(input);
+		var output = yamlToGo(input);
 
 		if (output.error)
 			$('#output').html('<span class="clr-red">'+output.error+'</span>');
