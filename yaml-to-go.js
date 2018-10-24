@@ -122,7 +122,7 @@ function yamlToGo(s, typename)
 			append(format(keyname)+" ");
 			parseScope(scope[keyname]);
 
-			append(' `yaml:"'+keyname);
+			append(' `json:"'+keyname);
 			if (omitempty && omitempty[keyname] === true)
 			{
 				append(',omitempty');
